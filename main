@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Zero Dose Line Listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .form-title {
+            color: #0d6efd;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+        .status-options {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .hidden-field {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .form-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <h1 class="text-center mb-4">Campaign Zero Dose Line Listing</h1>
+        
+        <form id="vaccinationForm" name="contactform">
+            <!-- Campaign Information Section -->
+            <div class="form-section">
+                <h2 class="form-title">Campaign Information</h2>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="campaign" class="form-label required-field">Campaign</label>
+                        <select class="form-select" id="Campaign" name="Campaign" required>
+                            <option value="">Select Campaign</option>
+                            <option value="NID APR 25">NID APR 2025</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="tehsil" class="form-label required-field">Tehsil</label>
+                        <select class="form-select" id="tehsil" name="Tehsil" required>
+                            <option value="">Select Tehsil</option>
+                            <option value="GIQBAL">GIQBAL</option>
+                            <option value="JAMSHEED">JAMSHEED</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="uc" class="form-label required-field">UC</label>
+                        <select class="form-select" id="uc" name="UC" required>
+                            <option value="">Select UC</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child Information Section -->
+            <div class="form-section">
+                <h2 class="form-title">Child Information</h2>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="childName" class="form-label required-field">Child Name</label>
+                        <input type="text" class="form-control" id="childName" name="Child Name" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="fatherName" class="form-label required-field">Father's Name</label>
+                        <input type="text" class="form-control" id="fatherName" name="Father's Name" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="gender" class="form-label required-field">Gender</label>
+                        <select class="form-select" id="gender" name="Gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="MALE">Male</option>
+                            <option value="FEMALE">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="ageMonths" class="form-label required-field">Age in Months</label>
+                        <select class="form-select" id="ageMonths" name="Age in Months" required>
+                            <option value="">Select Age</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AIC Information Section -->
+            <div class="form-section">
+                <h2 class="form-title">AIC Information</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="aicName" class="form-label required-field">AIC Name</label>
+                        <input type="text" class="form-control" id="aicName" name="AIC Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="aicCode" class="form-label required-field">AIC Code</label>
+                        <input type="number" class="form-control" id="aicCode" name="AIC Code" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Information Section -->
+            <div class="form-section">
+                <h2 class="form-title">Team Information</h2>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="teamLeader" class="form-label required-field">Team Leader</label>
+                        <input type="text" class="form-control" id="teamLeader" name="Team Leader" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="teamMember" class="form-label required-field">Team Member</label>
+                        <input type="text" class="form-control" id="teamMember" name="Team Member" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="teamNo" class="form-label required-field">Team No.</label>
+                        <input type="number" class="form-control" id="teamNo" name="Team No" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="dayOfWork" class="form-label required-field">Day of Work</label>
+                        <select class="form-select" id="dayOfWork" name="Day of Work" required>
+                            <option value="">Select Day</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address Information Section -->
+            <div class="form-section">
+                <h2 class="form-title">Address Information</h2>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="houseNo" class="form-label required-field">House No.</label>
+                        <input type="text" class="form-control" id="houseNo" name="House No" required>
+                    </div>
+                    <div class="col-md-9">
+                        <label for="completeAddress" class="form-label required-field">Complete Address</label>
+                        <input type="text" class="form-control" id="completeAddress" name="Complete Address" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contactNo" class="form-label required-field">Contact No.</label>
+                        <input type="tel" class="form-control" id="contactNo" name="Contact No">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vaccination Details Section -->
+            <div class="form-section">
+                <h2 class="form-title">Vaccination Details</h2>
+                <div class="row g-3">
+                    <div class="col-md-4 hidden-field" id="dateOfCoverageContainer">
+                        <label for="dateOfCoverage" class="form-label required-field">Date of Coverage</label>
+                        <input type="date" class="form-control" id="dateOfCoverage" name="Date of Coverage" required>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="coveredStatus" class="form-label required-field">Covered Status</label>
+                        <select class="form-select" id="coveredStatus" name="Covered Status" required>
+                            <option value="">Select Status</option>
+                            <option value="COVERED">Covered</option>
+                            <option value="SHIFTED">Shifted</option>
+                            <option value="OVERAGE">Overage</option>
+                            <option value="DEATH">Death</option>
+                            <option value="NA">NA</option>
+                            <option value="REFUSAL">Refusal</option>
+                            <option value="WAITING FOR OUTREACH">Waiting for Outreach</option>
+                            <option value="LOCK">Lock</option>
+                            <option value="SICK">Sick</option>
+                            <option value="CHILD RETURNED BACK DUE TO NON-AVAILABILITY OF VACCINE/VACCINATOR">Child Returned Back (No Vaccine/Vaccinator)</option>
+                            <option value="STATUS NOT UPDATED">Status Not Updated</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 hidden-field" id="coveredByContainer">
+                        <label for="coveredBy" class="form-label required-field">Covered by</label>
+                        <input type="text" class="form-control" id="coveredBy" name="Covered By" required>
+                    </div>
+                    <div class="col-md-6 hidden-field" id="qrCodeContainer">
+        		<label for="qrCode" class="form-label required-field">QR Code</label>
+        		<input type="text" class="form-control" id="qrCode" name="QR Code" required maxlength="14" pattern="[0-9]{14}" 
+               		title="Please enter exactly 14 digits">
+		    </div>
+                    <div class="col-md-6">
+                        <label for="tid" class="form-label required-field">TID #</label>
+                        <input type="text" class="form-control" id="tid" name="TID" >
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastVisitDate" class="form-label">Last Visit Date</label>
+                        <input type="date" class="form-control" id="lastVisitDate" name="Last Visit Date">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="recordingStatus" class="form-label required-field">Recording Status</label>
+                        <select class="form-select" id="recordingStatus" name="Recording Status" required>
+                            <option value="">Select Status</option>
+                            <option value="Recorded in Campaign">Recorded in Campaign</option>
+                            <option value="Recorded After Campaign">Recorded After Campaign</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information Section -->
+            <div class="form-section">
+                <h2 class="form-title">Additional Information</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="assignedUcLevel" class="form-label required-field">Assigned UC Level</label>
+                        <input type="text" class="form-control" id="assignedUcLevel" name="Assigned UC Level" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="remarks" class="form-label">Remarks</label>
+                        <textarea class="form-control" id="remarks" rows="2" name="Remarks"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="epiVaccinator" class="form-label required-field">EPI Vaccinator</label>
+                        <input type="text" class="form-control" id="epiVaccinator" name="EPI Vaccinator" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="vaccinatorContact" class="form-label">Vaccinator Contact</label>
+                        <input type="tel" class="form-control" id="vaccinatorContact" name="Vaccinator Contact">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="outreachSite" class="form-label required-field">Outreach Site</label>
+                        <input type="text" class="form-control" id="outreachSite" name="Outreach Site" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="catchmentArea" class="form-label required-field">Catchment Area</label>
+                        <input type="text" class="form-control" id="catchmentArea" name="Catchment Area" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lhwName" class="form-label">LHW Name</label>
+                        <input type="text" class="form-control" id="lhwName" name="LHW Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cmName" class="form-label required-field">Community Mobilizer</label>
+                        <input type="text" class="form-control" id="cmName" name="Community Mobilizer" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                <button type="reset" class="btn btn-secondary me-md-2">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize age dropdown
+            const ageSelect = document.getElementById('ageMonths');
+            for (let i = 1; i <= 59; i++) {
+                const option = document.createElement('option');
+                option.value = i.toString().padStart(2, '0');
+                option.textContent = option.value;
+                ageSelect.appendChild(option);
+            }
+		 // Add input validation for QR Code field
+            document.getElementById('qrCode').addEventListener('input', function(e) {
+                // Allow only numeric input
+                this.value = this.value.replace(/\D/g, '');
+                
+                // Enforce max length
+                if (this.value.length > 14) {
+                    this.value = this.value.slice(0, 14);
+                }
+            });
+
+            // Initialize day of work dropdown
+            const daySelect = document.getElementById('dayOfWork');
+            for (let i = 1; i <= 10; i++) {
+                const option = document.createElement('option');
+                option.value = i.toString().padStart(2, '0');
+                option.textContent = option.value;
+                daySelect.appendChild(option);
+            }
+
+            // UC population logic
+            document.getElementById('tehsil').addEventListener('change', function() {
+                const ucSelect = document.getElementById('uc');
+                ucSelect.innerHTML = '<option value="">Select UC</option>';
+                
+                const ucs = {
+                    'GIQBAL': [
+                        'DEHLI MERCANTILE-1', 'CIVIC CENTRE-2', 'PIB COLONY-3',
+                        'ESSA NAGRI-4', 'GULSHAN-I-5', 'GILLANI-6', 'DALMIA-7',
+                        'JAMALI COLONY-8', 'GULSHAN-II-9', 'PEHALWAN GOTH-10',
+                        'METROVILLE-11', 'GULZAR-E-HIJRAI-12', 'SAFORA-13', 'FAISAL CANT-14'
+                    ],
+                    'JAMSHEED': [
+                        'AKHTER COLONY-1', 'MANZOOR COLONY-2', 'AZAM BASTI-3',
+                        'CHENASAR GOTH-4', 'MEHMOODABAD-5', 'PECHS-I-6',
+                        'PECHS-II-7', 'JATLAND LINES-8', 'JACOBLINES-9',
+                        'JAMSHED QUARTERS-10', 'GARDEN EAST-11',
+                        'SOLDIER BAZAR-12', 'PAKISTAN QUARTERS-13'
+                    ]
+                };
+
+                ucs[this.value]?.forEach(uc => {
+                    const option = document.createElement('option');
+                    option.value = uc;
+                    option.textContent = uc;
+                    ucSelect.appendChild(option);
+                });
+            });
+
+            // Covered status visibility
+            document.getElementById('coveredStatus').addEventListener('change', function() {
+                const showCoveredFields = this.value === 'COVERED';
+                ['dateOfCoverageContainer', 'coveredByContainer', 'qrCodeContainer'].forEach(id => {
+                    const el = document.getElementById(id);
+                    el.classList.toggle('hidden-field', !showCoveredFields);
+                    el.querySelector('input').required = showCoveredFields;
+                });
+            });
+
+
+
+            // Form submission
+            const form = document.forms['contactform'];
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby-R71hvc_rc1ziqvKyV-2GQAUFie4-llH-PLDRanMG_E6vI1_foWnv2PyfH-MbNJE8/exec';
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Validate required fields
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                if (document.getElementById('coveredStatus').value === 'COVERED') {
+                    const requiredCoveredFields = ['dateOfCoverage', 'coveredBy', 'qrCode'];
+                    if (requiredCoveredFields.some(id => !document.getElementById(id).value)) {
+                        alert('Please fill all required fields for Covered status');
+                        return;
+                    }
+                }
+
+                try {
+                    const response = await fetch(scriptURL, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    });
+                    
+                    if (response.ok) {
+                        alert('Form submitted successfully!');
+                        form.reset();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Form submission failed. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
